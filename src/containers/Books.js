@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Container } from 'react-bootstrap';
-import { Form, Button, Select, Card, Label, Modal, Image, Header, Icon, Message } from 'semantic-ui-react'
+import { Form, Button, Select, Card, Label, Modal, Image, Header, Icon } from 'semantic-ui-react'
 import toast from 'react-hot-toast';
 import { useFormik } from 'formik'
 import useApi from '../hooks/useApi'
@@ -53,11 +53,6 @@ const Books = () => {
     }, [filters])
 
     return(
-        (books?.length === 0) ?
-        <Container className="text-center">
-            <h2>No results found</h2>
-        </Container>
-        :
         <Container style={{minHeight: 'calc(100vh - 60px)'}}>
             <Modal closeIcon dimmer="blurring" onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open}>
                 <Modal.Header>Book details</Modal.Header>
@@ -113,6 +108,7 @@ const Books = () => {
             </Form>
 
             <h1 className="text-center">Book list</h1>
+            {(books?.length === 0) ? <h2>No results found</h2> : null}
             <Card.Group itemsPerRow={3}>
             { books?.map((book) => (
                 <Card key={book?.id} className="mb-4">

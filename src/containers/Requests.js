@@ -47,13 +47,9 @@ const Requests = () => {
     }, [])
 
     return(
-        (requests?.length === 0) ?
-        <Container className="text-center">
-            <h2>No results found</h2>
-        </Container>
-        :
         <Container style={{minHeight: 'calc(100vh - 150px)'}}>
             <h1 className="text-center">Request list</h1>
+            {(requests?.length === 0) ? <h2>No results found</h2> : null}
             <Card.Group itemsPerRow={3}>
             { requests?.map((request) => (
                 <Card key={request?.id} className="mb-4">
