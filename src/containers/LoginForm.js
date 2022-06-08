@@ -39,7 +39,7 @@ const LoginForm = () => {
   });
 
   return(
-    <Container className="w-50">
+    <Container className="w-50" style={{minHeight: 'calc(100vh - 150px)'}}>
       <h1 className="text-center">Login</h1>
       <Form onSubmit={formik.handleSubmit}>
         <Form.Input

@@ -52,7 +52,7 @@ const Requests = () => {
             <h2>No results found</h2>
         </Container>
         :
-        <Container>
+        <Container style={{minHeight: 'calc(100vh - 150px)'}}>
             <h1 className="text-center">Request list</h1>
             <Card.Group itemsPerRow={3}>
             { requests?.map((request) => (

@@ -58,7 +58,7 @@ const Books = () => {
             <h2>No results found</h2>
         </Container>
         :
-        <Container>
+        <Container style={{minHeight: 'calc(100vh - 60px)'}}>
             <Modal closeIcon dimmer="blurring" onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open}>
                 <Modal.Header>Book details</Modal.Header>
                 <Modal.Content image>
