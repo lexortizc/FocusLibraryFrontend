@@ -31,7 +31,7 @@ const NavBar = () => {
                 </Nav>
                 {(session?.token) ? <Button variant="outline-light" onClick={() => {
                     setSession({});
-                    toast.success("Bye Bye!");
+                    toast('Bye Bye!', { icon: '👋'});
                 }}>Logout</Button> : null }
             </Container>
         </Navbar>

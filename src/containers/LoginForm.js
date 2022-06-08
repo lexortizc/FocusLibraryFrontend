@@ -30,7 +30,7 @@ const LoginForm = () => {
         }
 
         setSession(decodeToken(response.data.token))
-        toast.success(response.data.message);
+        toast(response.data.message, { icon: '👋'});
         navigate('/books');
       } catch (error) {
         toast.error('Bad credentials');

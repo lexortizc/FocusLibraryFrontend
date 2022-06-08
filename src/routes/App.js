@@ -20,6 +20,8 @@ function App() {
   //   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6IkxleCIsImxhc3RfbmFtZSI6Ik9ydGl6IiwiZW1haWwiOiJsb3J0aXpAZ21haWwuY29tIiwicm9sZV9pZCI6MSwiaWF0IjoxNjU0NTExMzM5LCJleHAiOjE2NTQ1MTQ5Mzl9.sk7Blpeaoi0TspJQTHT7MDNkwRJBM8_C-YQ_E6T0s-A"
   // });
 
+  window.onbeforeunload = e => ('You are about to log out');
+
   return (
     <BrowserRouter>
       <AuthContext.Provider value={{session, setSession}}>
